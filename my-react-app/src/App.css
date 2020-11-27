@@ -1,38 +1,169 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.carousel,
+.item,
+.active {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.carousel-inner {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background: linear-gradient(
+      143deg,
+      rgb(15, 68, 95) 0%,
+      rgb(14, 41, 66) 40%,
+      rgba(0, 0, 0, 5) 94%
+    )
+    no-repeat;
+  color: white;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sideLine {
+  border-left: 4px solid #1db954;
+  position: relative;
+  right: 1.2rem;
+}
+
+.underLine {
+  border-bottom: #1db954 2px solid;
+  border-radius: 2px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mark {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: inherit;
+}
+
+.mark .btn {
+  display: inline;
+  border: none;
+  background-color: inherit;
+}
+
+nav {
+  background-color: inherit;
+  position: relative;
+  display: flex;
+}
+
+.mark .nav-link,
+.sticky-sidebar {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: #616467;
+  font-size: 0.6rem;
+}
+
+.mark .nav-link:hover,
+.mark .nav-link:focus,
+.mark .nav-link:active {
+  text-decoration: none;
+  text-decoration-color: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  background: inherit;
+  border: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#sticky-sidebar {
+  background-color: black !important;
+}
+
+.vh-100 {
+  height: 90vh !important;
+}
+
+.footah {
+  height: 10vh !important;
+  background-color: rgb(22, 22, 22) !important;
+}
+
+.nav-link {
+  color: #3f3f3f;
+  text-emphasis: none;
+  text-decoration-color: none;
+}
+
+.nav-link:hover {
+  color: white;
+  text-emphasis: none;
+  text-decoration-color: none;
+}
+
+.up a {
+  color: #616467;
+  text-emphasis: none;
+  text-decoration-color: none;
+}
+
+.up a:hover {
+  color: #1db954;
+  text-emphasis: none;
+  text-decoration-color: none;
+}
+
+.separatore {
+  border-left: 1px solid #616467;
+}
+
+.down .btn {
+  border: 1px solid white;
+  border-radius: 2rem;
+  color: white;
+}
+
+.down .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.navbar .row,
+.navbar .row .col {
+  width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: #616467;
+}
+
+.navbar a:hover,
+.navbar a:active,
+.navbar a:focus {
+  text-decoration: none;
+  text-decoration-color: none;
+  color: white;
+}
+
+.play {
+  font-size: larger;
+}
+
+.card-text {
+  font-size: 0.8rem;
 }
