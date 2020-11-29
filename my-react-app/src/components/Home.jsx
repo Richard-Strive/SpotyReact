@@ -104,7 +104,7 @@ class album extends Component {
               {this.state.homeSongs.map((element) => (
                 <div className="col m2">
                   <div className="card">
-                    <img src="http://via.placeholder.com/150" alt="..." />
+                    <img src={element.album.cover_medium} alt="..." />
                     <div className="card-body text-center">
                       <p className="card-text">{element.title}</p>
                     </div>
@@ -112,6 +112,7 @@ class album extends Component {
                 </div>
               ))}
             </div>
+
             <h2 className="mt-5">Classifiche</h2>
             <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
               <div className="col m2">
