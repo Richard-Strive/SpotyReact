@@ -1,6 +1,30 @@
 import React, { Component } from "react";
 
 class album extends Component {
+  state = {
+    homeSongs: [],
+  };
+
+  fetchAlbums = async () => {
+    try {
+      const response = await fetch(
+        "https://deezerdevs-deezer.p.rapidapi.com/search?q=Bob%20Marley",
+        {
+          headers: {
+            "x-rapidapi-key":
+              "072ce4fe12mshfaac4b953a12006p1fbad8jsn60c87d42c08b",
+            "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+          },
+        }
+      );
+
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   render() {
     return (
       <div className="col-10 offset-2" id="main">
@@ -12,7 +36,7 @@ class album extends Component {
               data-slide-to="0"
             >
               <div className="col">
-                <a className="nav-link " onclick="styleClick(event)" href="#">
+                <a className="nav-link " onClick="styleClick(event)" href="#">
                   TRENDING
                 </a>
                 <div className="underLine d-block"> </div>
@@ -24,7 +48,7 @@ class album extends Component {
               data-slide-to="1"
             >
               <div className="col">
-                <a className="nav-link " onclick="styleClick(event)" href="#">
+                <a className="nav-link " onClick="styleClick(event)" href="#">
                   PODCAST
                 </a>
                 <div className="underLine d-none"></div>
@@ -36,7 +60,7 @@ class album extends Component {
               data-slide-to="2"
             >
               <div className="col">
-                <a className="nav-link " onclick="styleClick(event)" href="#">
+                <a className="nav-link " onClick="styleClick(event)" href="#">
                   MOODS AND GENRES
                 </a>
                 <div className="underLine d-none"></div>
@@ -48,7 +72,7 @@ class album extends Component {
               data-slide-to="3"
             >
               <div className="col">
-                <a className="nav-link " onclick="styleClick(event)" href="#">
+                <a className="nav-link " onClick="styleClick(event)" href="#">
                   NEW REALEASES
                 </a>
                 <div className="underLine d-none"></div>
@@ -60,7 +84,7 @@ class album extends Component {
               data-slide-to="4"
             >
               <div className="col">
-                <a className="nav-link" onclick="styleClick(event)" href="#">
+                <a className="nav-link" onClick="styleClick(event)" href="#">
                   DISCOVER
                 </a>
                 <div className="underLine d-none"></div>
