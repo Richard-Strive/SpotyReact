@@ -5,7 +5,7 @@ class album extends Component {
     homeSongs: [],
   };
 
-  fetchAlbums = async () => {
+  componentDidMount = async () => {
     try {
       const response = await fetch(
         "https://deezerdevs-deezer.p.rapidapi.com/search?q=Bob%20Marley",
@@ -18,8 +18,12 @@ class album extends Component {
         }
       );
 
-      const data = await response.json();
-      console.log(data);
+      const songsArray = await response.json();
+      if (response.ok) {
+        alert("GOOD BOY");
+        this.setState({ homeSongs: songsArray.data.slice(0, 6) });
+        console.log(songsArray.data);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -92,463 +96,29 @@ class album extends Component {
             </li>
           </ol>
         </div>
-        <div id="carouselExampleIndicators" className="carousel slide">
-          <div className="carousel-inner">
-            <div className="carousel-item active" id="car1">
-              <div className="container mt-2 mb-2 ">
-                <h2>#THROWBACKTHURSDAY</h2>
-                <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Italian Karaoke</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Lyricists</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Italy's Frequent Rotation</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">00s Italy</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Cocktail Hour</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">I Love my '90s Hip-Hop</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 className="mt-5">classifiche</h2>
-                <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Top 50-Italy</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Top 50-Global</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Viral 50-Global</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">Viral 50-Italy</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item" id="car1">
-              <div className="container mt-2 mb-2 ">
-                <h2>#THROWBACKTHURSDAY</h2>
-                <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body text-center">
-                        <p className="card-text">
-                          <strong>bla bla</strong>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 className="mt-5">cNameifiche</h2>
-                <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item" id="car1">
-              <div className="container mt-2 mb-2 ">
-                <h2>#THROWBACKTHURSDAY</h2>
-                <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 className="mt-5">classifiche</h2>
-                <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item" id="car1">
-              <div className="container mt-2 mb-2 ">
-                <h2>#THROWBACKTHURSDAY</h2>
-                <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2 className="mt-5">classifiche</h2>
-                <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col m2">
-                    <div className="card">
-                      <img src="http://via.placeholder.com/150" alt="..." />
-                      <div className="card-body">
-                        <p className="card-text">bla bla</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="container mt-2 mb-2 ">
-                <h2>#THROWBACKTHURSDAY</h2>
-                <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
-                  <div className="col m2">
-                    <div className="card"></div>
-                    <img src="http://via.placeholder.com/150" alt="..." />
-                    <div className="card-body"></div>
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                    <div className="col m2"></div>
-                  </div>
-                </div>
+
+        <div className="carousel-item active" id="car1">
+          <div className="container mt-2 mb-2 ">
+            <h2>#THROWBACKTHURSDAY</h2>
+            <div className="mb-5 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
+              {this.state.homeSongs.map((element) => (
                 <div className="col m2">
                   <div className="card">
                     <img src="http://via.placeholder.com/150" alt="..." />
-                    <div className="card-body">
-                      <p className="card-text">bla bla</p>
+                    <div className="card-body text-center">
+                      <p className="card-text">{element.title}</p>
                     </div>
                   </div>
                 </div>
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-            <h2 className="mt-5">classifiche</h2>
+            <h2 className="mt-5">Classifiche</h2>
             <div className="mt-2 row row-cols-2 row-cols-sm-2 row-cols-md-6 row-cols-lg-6">
               <div className="col m2">
                 <div className="card">
                   <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col m2">
-                <div className="card">
-                  <img src="http://via.placeholder.com/150" alt="..." />
-                  <div className="card-body">
-                    <p className="card-text">bla bla</p>
+                  <div className="card-body text-center">
+                    <p className="card-text">Top 50-Italy</p>
                   </div>
                 </div>
               </div>
